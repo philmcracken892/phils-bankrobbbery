@@ -30,8 +30,8 @@ A comprehensive bank robbery script for RedM using the RSG-Core framework with o
 ## Configuration
 
 ### Items Required
-- Make sure you have a `dynamite` item in your database/items list
-- Ensure `gold_bars` and `diamonds` items exist in your inventory system
+- Make sure you have a `tnt item in your database/items list
+- Ensure `gold_bar` and `diamond` items exist in your inventory system
 
 ### Bank Locations
 The script comes pre-configured with 4 bank locations:
@@ -47,13 +47,13 @@ Each location has both safes and vaults with different reward tiers.
 Config.Rewards = {
     safe = {
         cash = {min = 50, max = 200},
-        gold_bars = {min = 1, max = 3, chance = 30},
-        diamonds = {min = 0, max = 1, chance = 15}
+        gold_bar = {min = 1, max = 3, chance = 30},
+        diamond = {min = 0, max = 1, chance = 15}
     },
     vault = {
         cash = {min = 200, max = 800},
-        gold_bars = {min = 2, max = 8, chance = 60},
-        diamonds = {min = 1, max = 4, chance = 40}
+        gold_bar = {min = 2, max = 8, chance = 60},
+        diamond = {min = 1, max = 4, chance = 40}
     }
 }
 ```
@@ -73,8 +73,6 @@ Config.Rewards = {
 - Alert blips appear on the map
 - Integration with RSG-Lawman system for enhanced alerts
 
-### Admin Commands
-- `/resetbank` - Reset all bank robbery cooldowns (Admin only)
 
 ## Settings
 
@@ -98,33 +96,7 @@ Config.Rewards = {
 ### Adding New Banks
 To add new bank locations, edit the `Config.Banks` table in `config.lua`:
 
-```lua
-newbank = {
-    name = "New Bank Name",
-    coords = vector3(x, y, z),
-    heading = 0.0,
-    blip = {
-        sprite = `blip_proc_home_robbery`,
-        scale = 0.8
-    },
-    safes = {
-        {
-            coords = vector3(x, y, z),
-            heading = 180.0,
-            type = 'safe',
-            robbed = false
-        }
-    },
-    vaults = {
-        {
-            coords = vector3(x, y, z),
-            heading = 0.0,
-            type = 'vault',
-            robbed = false
-        }
-    }
-}
-```
+
 
 ### Modifying Rewards
 Adjust the `Config.Rewards` table to change loot amounts and chances.
@@ -163,5 +135,6 @@ For issues or questions:
 - Anti-spam protection
 
 ## License
+
 
 This script is provided as-is for use with RSG Framework servers.
